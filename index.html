@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <title>TODO App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TODO App</h1>
+      <aside>
+        <h3>Settings</h3>
+        <label>
+          Hide done tasks
+          <input class="settings-hide" type="checkbox" />
+        </label>
+      </aside>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="addNew">
+          <input type="text" placeholder="Task to be done.." />
+          <button type="button" class="push">Add new task</button>
+        </div>
+        <ul class="todo-list"></ul>
+      </div>
+    </main>
+
+    <datalist id="label-list">
+      <option value="work"></option>
+      <option value="fun"></option>
+      <option value="exercise"></option>
+      <option value="programming"></option>
+    </datalist>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

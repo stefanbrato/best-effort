@@ -1,0 +1,231 @@
+:root {
+  --primary-color: #4470ad;
+  --secondary-color: #ccdbee;
+  --surface-color: #fff;
+  --border-color: #d1d3d4;
+  --font-color: #111;
+  --default-label-color: #254db1;
+  --alternative-label-color: #772399;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  box-sizing: border-box;
+  background: var(--secondary-color);
+  display: grid;
+  place-content: center;
+  gap: 1.5rem;
+}
+
+header {
+  display: flex;
+}
+
+h1 {
+  margin: 0;
+  align-self: center;
+  flex: 1;
+}
+
+button {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--surface-color);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding-inline: 0.5rem;
+}
+
+button.icon {
+  line-height: 1;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  aspect-ratio: 1;
+}
+
+input {
+  padding: 0.5rem;
+  color: var(--font-color);
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 2px solid var(--border-color);
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  min-width: 40vmax;
+  max-width: 100%;
+}
+
+.container {
+  background: var(--surface-color);
+  border-radius: 0.5rem;
+  min-height: fit-content;
+  display: grid;
+  width: 100%;
+}
+
+aside {
+  background-color: var(--surface-color);
+  border-radius: 0.5rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  width: fit-content;
+}
+
+aside h3 {
+  margin: 0;
+}
+
+button.push {
+  width: 150px;
+  height: 45px;
+}
+
+.addNew {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.addNew input {
+  width: 100%;
+}
+
+.addNew input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+ul {
+  display: grid;
+  gap: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  margin: 0;
+}
+
+ul:empty {
+  display: none;
+}
+
+li {
+  border-radius: 0.5rem;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 30px;
+  grid-template-areas:
+    "a b c"
+    "d d d";
+}
+
+li > p {
+  font-size: 1.25rem;
+  flex: 1;
+  margin: 0;
+  grid-area: b;
+}
+
+li button.remove {
+  grid-area: c;
+}
+
+li[checked] p {
+  text-decoration: line-through;
+}
+
+li .check {
+  height: 2rem;
+  width: 2rem;
+  margin: 0;
+  cursor: pointer;
+  border: none;
+  grid-area: a;
+}
+.check:active {
+  outline-color: var(--primary-color);
+}
+
+li[hidden] {
+  display: none;
+}
+
+div.labels {
+  display: flex;
+  flex-direction: row;
+  grid-area: d;
+  grid-column: span 3;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+input.labels {
+  padding-block: 0.35rem;
+}
+
+.label-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.label-list:empty {
+  display: none;
+}
+
+.label-list > p {
+  position: relative;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--default-label-color);
+  color: var(--surface-color);
+}
+
+.label-list > p:nth-child(2n + 1) {
+  background-color: var(--alternative-label-color);
+}
+
+.label-list > p:hover::after {
+  content: "\002573";
+  font-size: 0.75rem;
+  background-color: #f00;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  text-align: center;
+  line-height: 2;
+  font-weight: 700;
+}
